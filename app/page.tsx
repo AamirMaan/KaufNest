@@ -74,23 +74,23 @@ export default function Home() {
             <strong style={{ color: '#374151' }}>Email:</strong>
             <br />
             <a href="mailto:info@kaufnest.com" style={{ color: '#2563eb', textDecoration: 'none' }}>
-              info@kaufnest.com
+              support@kaufnest.com
             </a>
           </div>
           <div>
             <strong style={{ color: '#374151' }}>Phone:</strong>
             <br />
-            <a href="tel:+1234567890" style={{ color: '#2563eb', textDecoration: 'none' }}>
-              +1 (234) 567-8900
+            <a href="tel:+4917647054749" style={{ color: '#2563eb', textDecoration: 'none' }}>
+              +491 (764) 705-4749
             </a>
           </div>
           <div>
             <strong style={{ color: '#374151' }}>Address:</strong>
             <br />
             <span style={{ color: '#6b7280' }}>
-              123 Business District<br />
-              Commerce City, CC 12345<br />
-              United States
+              Reinickendorfer straße 2<br />
+              Berlin, BE 13347<br />
+              Germany
             </span>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer style={{ textAlign: 'center', marginTop: '40px', padding: '20px 0', borderTop: '1px solid #eee', color: '#6b7280' }}>
-        <p style={{ margin: 0 }}>© 2024 KaufNest. Professional E-commerce Solutions.</p>
+        <p style={{ margin: 0 }}>© 2025 KaufNest. Professional E-commerce Solutions.</p>
       </footer>
     </div>
   )
