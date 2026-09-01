@@ -1,15 +1,11 @@
-# KaufNest Portfolio Website
+# Boughtopia
 
-A minimalist portfolio website for KaufNest - an e-commerce business specializing in Amazon and eBay marketplace solutions.
+Brand-awareness site for Boughtopia, a Berlin-based multi-platform commerce studio. Boughtopia
+manages seller stores across Amazon, eBay, Etsy, Shopify, and TikTok Shop, and is building a
+bookkeeping platform that unifies revenue, fees, and payouts across every marketplace.
 
-## Features
-
-- Clean, professional design
-- Contact information section
-- Service overview
-- Company information
-- Custom KaufNest logo
-- Responsive layout
+This site is currently a single-page marketing site, not the product itself. See
+[CLAUDE.md](CLAUDE.md) for project context and [BRAND.md](BRAND.md) for brand guidelines.
 
 ## Getting Started
 
@@ -34,6 +30,6 @@ npm start
 
 ## Customization
 
-- Update contact information in `app/page.tsx`
-- Modify company details and services as needed
-- Logo is located in `public/logo.svg`
+- Page content lives in `src/app/page.tsx`
+- Brand colors are defined as Tailwind theme tokens in `src/app/globals.css`
+- Logos and marketplace icons are in `public/brand/`

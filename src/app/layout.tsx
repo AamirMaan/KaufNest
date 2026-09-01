@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'KaufNest',
-  description: 'Professional e-commerce solutions for Amazon and eBay marketplaces',
+  title: 'Boughtopia',
+  description:
+    'Boughtopia helps multi-platform sellers launch, manage, and understand their business across Amazon, eBay, Etsy, Shopify, and TikTok Shop.',
 }
 
 export default function RootLayout({

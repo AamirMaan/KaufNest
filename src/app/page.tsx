@@ -1,245 +1,225 @@
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white text-navy">
       {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-4xl mx-auto px-6 py-8">
-          <div className="text-center">
-            <img 
-              src="/KaufNest-logo.png" 
-              alt="KaufNest Logo" 
-              className="h-20 w-20 mx-auto mb-4"
-            />
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">KaufNest</h1>
-            <p className="text-lg text-gray-600">Professional E-commerce Solutions</p>
-          </div>
+      <header className="sticky top-0 z-10 bg-white/90 backdrop-blur border-b border-slate-100">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <img src="/brand/boughtopia-lockup-bag.svg" alt="Boughtopia" className="h-8" />
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+            <a href="#services" className="hover:text-navy transition-colors">Services</a>
+            <a href="#product" className="hover:text-navy transition-colors">Product</a>
+            <a href="#about" className="hover:text-navy transition-colors">About</a>
+          </nav>
+          <a
+            href="#contact"
+            className="rounded-full bg-emerald px-5 py-2 text-sm font-semibold text-white hover:bg-emerald-dark transition-colors"
+          >
+            Get in touch
+          </a>
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-6 py-12">
-        {/* Hero Section */}
-        <section className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">
-            Your Trusted E-commerce Partner
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We specialize in helping businesses succeed on Amazon and eBay marketplaces through 
-            strategic product sourcing, optimized listings, and comprehensive marketplace management.
+      {/* Hero */}
+      <section className="max-w-6xl mx-auto px-6 pt-20 pb-16 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span className="inline-block rounded-full bg-emerald/10 text-emerald-dark text-xs font-semibold tracking-wide uppercase px-3 py-1 mb-6">
+            Berlin &middot; Multi-platform commerce
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            Sell everywhere.
+            <br />
+            Understand everything.
+          </h1>
+          <p className="text-lg text-slate-600 leading-relaxed mb-8">
+            Boughtopia launches and manages stores across Amazon, eBay, Etsy, Shopify, and
+            TikTok Shop &mdash; and we&apos;re building the bookkeeping platform that brings
+            every marketplace&apos;s revenue, fees, and payouts into one clear view.
           </p>
-        </section>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="#contact"
+              className="rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
+            >
+              Get in touch
+            </a>
+            <a
+              href="#product"
+              className="rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-navy hover:border-emerald hover:text-emerald-dark transition-colors"
+            >
+              Preview the dashboard
+            </a>
+          </div>
+        </div>
+        <div className="flex justify-center md:justify-end">
+          <img
+            src="/brand/boughtopia-icon-bag.svg"
+            alt=""
+            className="w-40 h-40 md:w-56 md:h-56 opacity-90"
+          />
+        </div>
+      </section>
 
-        {/* About Section */}
-        <section className="mb-16">
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">About KaufNest</h2>
-            <div className="grid md:grid-cols-2 gap-8">
+      {/* KPI strip */}
+      <section className="border-y border-slate-100 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {[
+            ["500+", "Product launches"],
+            ["5", "Marketplaces supported"],
+            ["24/7", "Dedicated support"],
+            ["100%", "Transparent reporting"],
+          ].map(([stat, label]) => (
+            <div key={label}>
+              <div className="text-3xl font-bold text-navy">{stat}</div>
+              <div className="text-sm text-slate-500 mt-1">{label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Value props */}
+      <section id="services" className="max-w-6xl mx-auto px-6 py-20">
+        <h2 className="text-2xl font-bold mb-12 text-center">What Boughtopia does</h2>
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
+          {[
+            {
+              n: "01",
+              title: "Sourcing & listings",
+              body: "Market research, competitor analysis, and SEO-optimized listings that turn browsers into buyers.",
+            },
+            {
+              n: "02",
+              title: "Marketplace management",
+              body: "Hands-on store management across Amazon, eBay, Etsy, Shopify, and TikTok Shop — inventory to customer support.",
+            },
+            {
+              n: "03",
+              title: "Financial clarity",
+              body: "Our own bookkeeping dashboard reconciles revenue, fees, and payouts across every platform automatically.",
+              badge: "Coming soon",
+            },
+            {
+              n: "04",
+              title: "Dedicated partnership",
+              body: "A dedicated account manager, transparent reporting, and scalable engagement as your business grows.",
+            },
+          ].map((item) => (
+            <div key={item.n} className="flex gap-5">
+              <span className="text-emerald font-bold text-lg shrink-0">{item.n}</span>
               <div>
-                <p className="text-gray-600 mb-4">
-                  KaufNest is a dedicated e-commerce business specializing in product sourcing, 
-                  listing optimization, and sales management across major online marketplaces 
-                  including Amazon and eBay.
-                </p>
-                <p className="text-gray-600">
-                  With years of experience in the e-commerce industry, we understand the 
-                  complexities of online marketplaces and help our partners navigate them successfully.
-                </p>
-              </div>
-              <div>
-                <p className="text-gray-600 mb-4">
-                  We partner with wholesalers and manufacturers to bring quality products to 
-                  customers worldwide, ensuring competitive pricing and exceptional service standards.
-                </p>
-                <p className="text-gray-600">
-                  Our team combines market expertise with cutting-edge tools to maximize your 
-                  sales potential and build sustainable business relationships.
-                </p>
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="font-semibold text-lg">{item.title}</h3>
+                  {item.badge && (
+                    <span className="text-[10px] font-semibold uppercase tracking-wide text-emerald-dark bg-emerald/10 rounded-full px-2 py-0.5">
+                      {item.badge}
+                    </span>
+                  )}
+                </div>
+                <p className="text-slate-600 leading-relaxed">{item.body}</p>
               </div>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        {/* Services Section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">Our Services</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-purple-500">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-purple-600 text-xl">🛒</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Amazon Marketplace</h3>
-              <p className="text-gray-600">Professional product listings, inventory management, and customer service optimization for maximum visibility and sales.</p>
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-purple-500">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-purple-600 text-xl">🏪</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">eBay Store Management</h3>
-              <p className="text-gray-600">Complete eBay store setup, optimized listings, competitive pricing strategies, and efficient order fulfillment.</p>
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-purple-500">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-purple-600 text-xl">🤝</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Wholesale Partnerships</h3>
-              <p className="text-gray-600">Long-term relationships with trusted suppliers and manufacturers, ensuring quality products and reliable supply chains.</p>
-            </div>
+      {/* Platform trust strip */}
+      <section className="border-y border-slate-100 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6 py-10">
+          <p className="text-center text-xs font-semibold tracking-wide uppercase text-slate-400 mb-6">
+            Wherever you sell, we&apos;ve got it covered
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-80">
+            <img src="/brand/amazon-logo.svg" alt="Amazon" className="h-6" />
+            <img src="/brand/e-bay-logo.svg" alt="eBay" className="h-6" />
+            <img src="/brand/etsy.svg" alt="Etsy" className="h-6" />
+            <img src="/brand/shopify-logo2.svg" alt="Shopify" className="h-5" />
+            <img src="/brand/tiktok-tab.svg" alt="TikTok Shop" className="h-5" />
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Additional Services */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">Additional Services</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">Product Research & Sourcing</h3>
-              <p className="text-gray-600 mb-4">Market analysis and trend identification to find profitable products with high demand and low competition.</p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Market trend analysis</li>
-                <li>• Competitor research</li>
-                <li>• Supplier verification</li>
-                <li>• Quality assurance</li>
+      {/* About */}
+      <section id="about" className="max-w-4xl mx-auto px-6 py-20">
+        <h2 className="text-2xl font-bold mb-6 text-center">From marketplace operators to platform builders</h2>
+        <p className="text-slate-600 leading-relaxed mb-4">
+          Boughtopia started in Berlin as a hands-on marketplace management business, helping
+          wholesalers and manufacturers launch and grow on Amazon and eBay. Along the way, we kept
+          hitting the same problem our partners did: revenue, fees, and payouts scattered across
+          five different marketplace dashboards, reconciled by hand in spreadsheets.
+        </p>
+        <p className="text-slate-600 leading-relaxed">
+          So we&apos;re building the tool we wished existed. Today, Boughtopia is two things at
+          once: a dedicated marketplace management team, and the bookkeeping platform we&apos;re
+          building to give every multi-platform seller one clear source of financial truth.
+        </p>
+      </section>
+
+      {/* Product preview */}
+      <section id="product" className="bg-navy text-white">
+        <div className="max-w-6xl mx-auto px-6 py-20">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block rounded-full bg-emerald/20 text-emerald text-xs font-semibold tracking-wide uppercase px-3 py-1 mb-6">
+                Coming soon
+              </span>
+              <h2 className="text-3xl font-bold mb-6">One dashboard for every marketplace</h2>
+              <p className="text-slate-300 leading-relaxed mb-6">
+                Boughtopia&apos;s bookkeeping platform pulls orders, expenses, purchases, and
+                payouts from every marketplace you sell on into a single, always up-to-date view.
+              </p>
+              <ul className="space-y-3 text-slate-200">
+                {[
+                  "Revenue, expenses, and net profit at a glance",
+                  "Per-platform balances, transfers, and pending payouts",
+                  "Inventory, listings, and messages in one place",
+                  "Integrations for Amazon, eBay, Etsy, Shopify, and TikTok Shop",
+                ].map((line) => (
+                  <li key={line} className="flex items-start gap-3">
+                    <span className="text-emerald mt-1">&#10003;</span>
+                    <span>{line}</span>
+                  </li>
+                ))}
               </ul>
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">Listing Optimization</h3>
-              <p className="text-gray-600 mb-4">SEO-optimized product listings that convert browsers into buyers with compelling descriptions and keywords.</p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Keyword research</li>
-                <li>• Product photography</li>
-                <li>• A+ content creation</li>
-                <li>• Performance tracking</li>
-              </ul>
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">Inventory Management</h3>
-              <p className="text-gray-600 mb-4">Efficient inventory tracking and management to prevent stockouts and optimize cash flow.</p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Stock level monitoring</li>
-                <li>• Automated reordering</li>
-                <li>• Demand forecasting</li>
-                <li>• Storage optimization</li>
-              </ul>
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">Customer Support</h3>
-              <p className="text-gray-600 mb-4">Professional customer service to maintain high seller ratings and customer satisfaction.</p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• 24/7 customer support</li>
-                <li>• Return management</li>
-                <li>• Review management</li>
-                <li>• Dispute resolution</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Us */}
-        <section className="mb-16">
-          <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg shadow-lg p-8 text-white">
-            <h2 className="text-2xl font-bold mb-8 text-center">Why Choose KaufNest</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <span className="text-purple-200 mr-3 mt-1">✓</span>
-                    <span>Proven track record with over 500+ successful product launches</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-purple-200 mr-3 mt-1">✓</span>
-                    <span>Advanced inventory management systems and analytics</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-purple-200 mr-3 mt-1">✓</span>
-                    <span>Competitive pricing and fast turnaround times</span>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <span className="text-purple-200 mr-3 mt-1">✓</span>
-                    <span>Dedicated account managers and 24/7 support</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-purple-200 mr-3 mt-1">✓</span>
-                    <span>Transparent reporting and performance metrics</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-purple-200 mr-3 mt-1">✓</span>
-                    <span>Scalable solutions for businesses of all sizes</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Process Section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">Our Process</h2>
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-purple-600 font-bold text-xl">1</span>
-              </div>
-              <h3 className="font-semibold text-gray-800 mb-2">Consultation</h3>
-              <p className="text-sm text-gray-600">We analyze your business goals and market opportunities</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-purple-600 font-bold text-xl">2</span>
-              </div>
-              <h3 className="font-semibold text-gray-800 mb-2">Strategy</h3>
-              <p className="text-sm text-gray-600">Custom strategy development based on your specific needs</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-purple-600 font-bold text-xl">3</span>
-              </div>
-              <h3 className="font-semibold text-gray-800 mb-2">Implementation</h3>
-              <p className="text-sm text-gray-600">Execute the strategy with our proven methodologies</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-purple-600 font-bold text-xl">4</span>
-              </div>
-              <h3 className="font-semibold text-gray-800 mb-2">Optimization</h3>
-              <p className="text-sm text-gray-600">Continuous monitoring and optimization for best results</p>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      {/* Contact Section */}
-      <section className="bg-gradient-to-r from-purple-600 to-purple-700 py-16">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Get In Touch</h2>
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="text-white">
-              <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">📧</span>
-              </div>
-              <h3 className="font-semibold mb-2">Email</h3>
-              <a href="mailto:support@kaufnest.com" className="text-purple-200 hover:text-white transition-colors">
-                support@kaufnest.com
+              <a
+                href="#contact"
+                className="inline-block mt-8 rounded-full bg-emerald px-6 py-3 text-sm font-semibold text-navy hover:bg-emerald-dark hover:text-white transition-colors"
+              >
+                Get early access
               </a>
             </div>
-            <div className="text-white">
-              <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">📞</span>
-              </div>
+            <img
+              src="/brand/Boughtopia-dashboard.png"
+              alt="Boughtopia dashboard preview"
+              className="rounded-xl shadow-2xl border border-white/10"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="bg-slate-50">
+        <div className="max-w-4xl mx-auto px-6 py-20 text-center">
+          <h2 className="text-3xl font-bold mb-4">Let&apos;s talk</h2>
+          <p className="text-slate-600 mb-12">
+            Whether you want help managing your marketplaces today, or early access to the
+            bookkeeping platform tomorrow &mdash; we&apos;d like to hear from you.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="font-semibold mb-2">Email</h3>
+              <a href="mailto:support@boughtopia.com" className="text-emerald-dark hover:text-navy transition-colors">
+                support@boughtopia.com
+              </a>
+            </div>
+            <div>
               <h3 className="font-semibold mb-2">Phone</h3>
-              <a href="tel:+4917647054749" className="text-purple-200 hover:text-white transition-colors">
+              <a href="tel:+4917647054749" className="text-emerald-dark hover:text-navy transition-colors">
                 +491 (764) 705-4749
               </a>
             </div>
-            <div className="text-white">
-              <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">📍</span>
-              </div>
+            <div>
               <h3 className="font-semibold mb-2">Address</h3>
-              <p className="text-purple-200">
-                Reinickendorfer straße 2<br />
+              <p className="text-slate-600">
+                Reinickendorfer Stra&szlig;e 2<br />
                 Berlin, BE 13347<br />
                 Germany
               </p>
@@ -249,9 +229,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 py-8">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-gray-400">© 2025 KaufNest. Professional E-commerce Solutions.</p>
+      <footer className="bg-navy py-8">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <p className="text-slate-400 text-sm">&copy; 2026 Boughtopia. Multi-platform commerce, Berlin.</p>
         </div>
       </footer>
     </div>
